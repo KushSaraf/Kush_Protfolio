@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KS-CONTROL | OPERATOR: KUSH SARAF</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Scanline Overlay & Background -->
+  <div id="scanlines"></div>
+  <div id="ambient-noise"></div>
+  
+  <!-- Boot Sequence -->
+  <div id="boot-sequence">
+    <div id="boot-text"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header id="top-nav">
+    <div class="nav-left">
+      <span class="nav-tag">[KS-GCS v1.0]</span>
+      <span class="nav-operator">OPERATOR: KUSH SARAF</span>
+      <span class="nav-status">STATUS: ONLINE</span>
+    </div>
+    <div class="nav-center">
+      <span class="nav-clock-label">ZULU TIME: </span>
+      <span id="zulu-clock">00:00:00</span>
+    </div>
+    <div class="nav-right">
+      <div class="blinking-dot"></div>
+      <span class="uplink-text">UPLINK ACTIVE</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">[PROFILE]</a>
+      <a href="#projects" class="nav-link">[MISSIONS]</a>
+      <a href="#skills" class="nav-link">[SYSTEMS]</a>
+      <a href="#research" class="nav-link">[INTEL]</a>
+      <a href="#contact" class="nav-link">[COMMS]</a>
+    </div>
+    <div class="radar-sweep-line"></div>
+  </header>
+
+  <main>
+    <!-- Hero / Radar Section -->
+    <section id="hero" class="reveal">
+      <div class="radar-container">
+        <div class="radar">
+          <div class="radar-sweep"></div>
+          <div class="radar-rings"></div>
+          <div class="radar-crosshair"></div>
+          <!-- Radar dots will be injected via JS -->
+        </div>
+        <div class="radar-panel" id="radar-readout">
+          <div class="panel-corner top-left">⌜</div>
+          <div class="panel-corner top-right">⌝</div>
+          <div class="panel-corner bottom-left">⌞</div>
+          <div class="panel-corner bottom-right">⌟</div>
+          <div class="panel-content">
+            <h3 id="readout-title">AWAITING LOCK...</h3>
+            <p id="readout-desc">Hover over radar targets to initialize scan.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="telemetry-stats">
+        <span class="stat">ACTIVE UNITS: <span class="number flicker" data-val="6">6</span> MISSIONS</span>
+        <span class="stat">SYSTEMS OPERATIONAL: <span class="number flicker" data-val="12">12</span></span>
+        <span class="stat">HACKATHON VICTORIES: <span class="number flicker" data-val="1">1</span></span>
+      </div>
+
+      <div class="hero-title">
+        <h1 class="orbitron">KUSH SARAF</h1>
+        <h2 class="subtitle">AUTONOMOUS SYSTEMS ENGINEER / AI DEVELOPER<br>KARNAVATI UNIVERSITY — BATCH 2028</h2>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal">
+      <div class="section-header">
+        <h2 class="orbitron">OPERATOR DOSSIER</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo-col">
+          <div class="hex-frame">
+            <div class="photo-scan"></div>
+            <img src="img.jpg" class="profile-photo" alt="OPERATOR: KUSH SARAF">
+          </div>
+          <div class="photo-labels">
+            <div>OPERATOR ID: KS-001</div>
+            <div>CLEARANCE: FULL ACCESS</div>
+          </div>
+        </div>
+        <div class="about-data-col">
+          <table class="dossier-table">
+            <tr><td>NAME</td><td>: KUSH SARAF</td></tr>
+            <tr><td>BASE</td><td>: GANDHINAGAR, GUJARAT</td></tr>
+            <tr><td>INSTITUTE</td><td>: KARNAVATI UNIVERSITY (UIT)</td></tr>
+            <tr><td>SEMESTER</td><td>: 04 / 08</td></tr>
+            <tr><td>SPECIALTY</td><td>: AUTONOMOUS SYSTEMS, AI/ML</td></tr>
+            <tr><td>STATUS</td><td>: ACTIVELY BUILDING</td></tr>
+          </table>
+          <p class="bio-text">
+            Autonomous Systems Engineer specializing in robotics, perception, and AI. Passionate about bringing intelligent systems to the physical world. Currently researching topological indicators for UAV navigation and developing robust offboard control architectures.
+          </p>
+          <div class="skill-bars">
+            <div class="skill-bar">
+              <span class="skill-label">PYTHON</span>
+              <span class="skill-meter">██████████░░</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-label">C/C++</span>
+              <span class="skill-meter">████████░░░░</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-label">ROS2/MAVLINK</span>
+              <span class="skill-meter">█████████░░░</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="reveal">
+      <div class="section-header">
+        <h2 class="orbitron">MISSION LOGS</h2>
+      </div>
+      <div class="mission-grid">
+        <!-- Mission 1 -->
+        <div class="mission-card">
+          <div class="panel-corner top-left">⌜</div>
+          <div class="panel-corner top-right">⌝</div>
+          <div class="panel-corner bottom-left">⌞</div>
+          <div class="panel-corner bottom-right">⌟</div>
+          <div class="mission-header">
+            <span class="mission-id">MISSION-001</span>
+            <span class="mission-status status-complete">[STATUS: COMPLETE]</span>
+          </div>
+          <hr class="scan-hr">
+          <h3 class="mission-title">MULTI-UAV SWARM COORDINATION</h3>
+          <div class="mission-details">
+            <div><span class="label">PLATFORM :</span> Ardupilot SITL + Gazebo</div>
+            <div><span class="label">UNITS    :</span> 4 UAVs</div>
+            <div><span class="label">OBJECTIVE:</span> Area coverage, collision-safe lawnmower paths</div>
+          </div>
+          <div class="mission-links">
+            <a href="https://github.com/KushSaraf" target="_blank">[GITHUB ↗]</a>
+          </div>
+        </div>
+
+        <!-- Mission 2 -->
+        <div class="mission-card">
+          <div class="panel-corner top-left">⌜</div>
+          <div class="panel-corner top-right">⌝</div>
+          <div class="panel-corner bottom-left">⌞</div>
+          <div class="panel-corner bottom-right">⌟</div>
+          <div class="mission-header">
+            <span class="mission-id">MISSION-002</span>
+            <span class="mission-status status-progress">[STATUS: IN PROGRESS]</span>
+          </div>
+          <hr class="scan-hr">
+          <h3 class="mission-title">AUTONOMOUS UAV DOCKING SYSTEM</h3>
+          <div class="mission-details">
+            <div><span class="label">CLIENT   :</span> ISRO IRoC 2026</div>
+            <div><span class="label">TECH     :</span> AprilTag, MAVLink, ROS2</div>
+            <div><span class="label">OBJECTIVE:</span> Precision landing in GPS-denied environments</div>
+          </div>
+          <div class="mission-links">
+            <a href="#" target="_blank">[RESTRICTED ↗]</a>
+          </div>
+        </div>
+
+        <!-- Mission 3 -->
+        <div class="mission-card">
+          <div class="panel-corner top-left">⌜</div>
+          <div class="panel-corner top-right">⌝</div>
+          <div class="panel-corner bottom-left">⌞</div>
+          <div class="panel-corner bottom-right">⌟</div>
+          <div class="mission-header">
+            <span class="mission-id">MISSION-003</span>
+            <span class="mission-status status-complete">[STATUS: COMPLETE]</span>
+          </div>
+          <hr class="scan-hr">
+          <h3 class="mission-title">SMART CHILD SAFETY DEVICE</h3>
+          <div class="mission-details">
+            <div><span class="label">PLATFORM :</span> ESP32, BLE RSSI</div>
+            <div><span class="label">AWARD    :</span> 1st Place Ctrl+Create</div>
+            <div><span class="label">OBJECTIVE:</span> Wearable proximity alert up to 20m</div>
+          </div>
+          <div class="mission-links">
+            <a href="https://github.com/KushSaraf" target="_blank">[GITHUB ↗]</a>
+          </div>
+        </div>
+
+        <!-- Mission 4 -->
+        <div class="mission-card">
+          <div class="panel-corner top-left">⌜</div>
+          <div class="panel-corner top-right">⌝</div>
+          <div class="panel-corner bottom-left">⌞</div>
+          <div class="panel-corner bottom-right">⌟</div>
+          <div class="mission-header">
+            <span class="mission-id">MISSION-004</span>
+            <span class="mission-status status-deployed">[STATUS: DEPLOYED]</span>
+          </div>
+          <hr class="scan-hr">
+          <h3 class="mission-title">JARVIS FOR WINDOWS</h3>
+          <div class="mission-details">
+            <div><span class="label">PLATFORM :</span> Python Local NLP</div>
+            <div><span class="label">TYPE     :</span> Offline AI Assistant</div>
+            <div><span class="label">OBJECTIVE:</span> Voice-driven system control & file indexing</div>
+          </div>
+          <div class="mission-links">
+            <a href="#" target="_blank">[SYSTEM READY]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="reveal">
+      <div class="section-header">
+        <h2 class="orbitron">ONBOARD SYSTEMS DIAGNOSTIC</h2>
+      </div>
+      <div class="subsystems-grid">
+        <div class="subsystem-panel">
+          <div class="panel-corner top-left">⌜</div><div class="panel-corner top-right">⌝</div><div class="panel-corner bottom-left">⌞</div><div class="panel-corner bottom-right">⌟</div>
+          <div class="subsystem-header">SUBSYSTEM: PERCEPTION</div>
+          <hr class="scan-hr">
+          <div class="skill-item"><span>YOLOv8</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>OpenCV</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>DeepSORT</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+        </div>
+        <div class="subsystem-panel">
+          <div class="panel-corner top-left">⌜</div><div class="panel-corner top-right">⌝</div><div class="panel-corner bottom-left">⌞</div><div class="panel-corner bottom-right">⌟</div>
+          <div class="subsystem-header">SUBSYSTEM: AUTONOMY</div>
+          <hr class="scan-hr">
+          <div class="skill-item"><span>ROS2</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>MAVLink</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>Gazebo</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>SLAM</span> <span class="status-learning">[LEARNING ⟳]</span></div>
+        </div>
+        <div class="subsystem-panel">
+          <div class="panel-corner top-left">⌜</div><div class="panel-corner top-right">⌝</div><div class="panel-corner bottom-left">⌞</div><div class="panel-corner bottom-right">⌟</div>
+          <div class="subsystem-header">SUBSYSTEM: ML CORE</div>
+          <hr class="scan-hr">
+          <div class="skill-item"><span>PyTorch</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>TensorFlow</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>Scikit-Learn</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+        </div>
+        <div class="subsystem-panel">
+          <div class="panel-corner top-left">⌜</div><div class="panel-corner top-right">⌝</div><div class="panel-corner bottom-left">⌞</div><div class="panel-corner bottom-right">⌟</div>
+          <div class="subsystem-header">SUBSYSTEM: EMBEDDED</div>
+          <hr class="scan-hr">
+          <div class="skill-item"><span>ESP32/Arduino</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>IoT Systems</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>C/C++</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="reveal">
+      <div class="section-header">
+        <h2 class="orbitron">INTELLIGENCE REPORTS — CLASSIFIED: PUBLIC</h2>
+      </div>
+      <div class="intel-reports">
+        <div class="intel-card">
+          <table class="dossier-table">
+            <tr><td>REPORT ID</td><td>: KS-R-001</td></tr>
+            <tr><td>FILED BY</td><td>: KUSH SARAF</td></tr>
+            <tr><td>SUBJECT</td><td>: Topological Indicators & Neural Vision for UAV Navigation</td></tr>
+            <tr><td>DATASET</td><td>: EuRoC MAV</td></tr>
+            <tr><td>ACCURACY</td><td>: 88% navigation accuracy achieved</td></tr>
+            <tr><td>STATUS</td><td>: <span class="status-deployed">PUBLISHED</span></td></tr>
+          </table>
+        </div>
+        <div class="intel-card">
+          <table class="dossier-table">
+            <tr><td>REPORT ID</td><td>: KS-R-002</td></tr>
+            <tr><td>FILED BY</td><td>: KUSH SARAF</td></tr>
+            <tr><td>SUBJECT</td><td>: Hourly Weather Forecasting by ML Methods over Delhi</td></tr>
+            <tr><td>DATASET</td><td>: Historical Meteorological Datasets</td></tr>
+            <tr><td>STATUS</td><td>: <span class="status-deployed">PUBLISHED</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="reveal">
+      <div class="section-header">
+        <h2 class="orbitron">COMMENDATIONS & FIELD VICTORIES</h2>
+      </div>
+      <div class="achievements-container">
+        <div class="medal-card glow-amber">
+          <div class="panel-corner top-left">⌜</div><div class="panel-corner top-right">⌝</div><div class="panel-corner bottom-left">⌞</div><div class="panel-corner bottom-right">⌟</div>
+          <div class="medal-icon">★</div>
+          <h3 class="orbitron">THINK BEYOND AI — 1ST RUNNER-UP</h3>
+          <p class="medal-details">
+            Gujarat’s first state-level AI quiz initiative.<br>
+            COMPETITION: 26 top institutions across Gujarat<br>
+            DATE: 24 April 2026 | VENUE: Narayana Business School<br>
+            PRIZE: ₹10,000 | 1 POINT SHY OF 1ST PLACE
+          </p>
+        </div>
+        <div class="medal-card glow-green">
+          <div class="panel-corner top-left">⌜</div><div class="panel-corner top-right">⌝</div><div class="panel-corner bottom-left">⌞</div><div class="panel-corner bottom-right">⌟</div>
+          <div class="medal-icon">★</div>
+          <h3 class="orbitron">CTRL+CREATE HACKATHON — 1ST PLACE</h3>
+          <p class="medal-details">
+            UID × UIT | 30+ COMPETING TEAMS<br>
+            DEVICE: SMART CHILD SAFETY WEARABLE<br>
+            MISSION DURATION: 48 HOURS
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="reveal">
+      <div class="section-header">
+        <h2 class="orbitron">OPEN COMMS CHANNEL</h2>
+      </div>
+      <div class="comms-terminal">
+        <div class="panel-corner top-left">⌜</div><div class="panel-corner top-right">⌝</div><div class="panel-corner bottom-left">⌞</div><div class="panel-corner bottom-right">⌟</div>
+        <div class="terminal-header">
+          TRANSMITTING TO: KUSH SARAF<br>
+          FREQUENCY: OPEN
+        </div>
+        <hr class="scan-hr">
+        <form id="comms-form">
+          <div class="form-row">
+            <label>SENDER CALLSIGN:</label>
+            <input type="text" id="sender-name" placeholder="[____________]" required>
+          </div>
+          <div class="form-row">
+            <label>MESSAGE PAYLOAD:</label>
+            <textarea id="message-payload" placeholder="[ENTER MESSAGE PAYLOAD...]" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="transmit-btn">[TRANSMIT ▶]</button>
+          <div id="transmit-status"></div>
+        </form>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/KushSaraf" target="_blank">[GH] GITHUB</a>
+        <a href="https://linkedin.com/in/kushsaraf" target="_blank">[LI] LINKEDIN</a>
+        <a href="mailto:sarafkush246@gmail.com">[EM] EMAIL</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    KS-GCS v1.0 — ALL SYSTEMS NOMINAL — &copy; 2026 KUSH SARAF <span class="blink-cursor">█</span>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
