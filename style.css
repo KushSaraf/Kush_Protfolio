@@ -674,6 +674,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  #boot-sequence {
+    font-size: 0.8rem;
+    padding-left: 10px;
+  }
   header {
     flex-direction: column;
     gap: 10px;
@@ -729,13 +733,14 @@ footer {
   }
   .radar-container {
     width: clamp(260px, 80vw, 400px);
-    height: clamp(260px, 80vw, 400px);
+    height: auto;
     margin: 0 auto;
     position: relative;
   }
   .radar {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
+    height: auto;
   }
   .radar-panel {
     position: relative;
