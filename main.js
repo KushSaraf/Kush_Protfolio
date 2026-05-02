@@ -127,27 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById('comms-form');
   const status = document.getElementById('transmit-status');
   if(form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      status.textContent = "TRANSMITTING...";
-      
-      fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: {
-              'Accept': 'application/json'
-          }
-      })
-      .then(response => response.json())
-      .then(data => {
-          status.textContent = "SIGNAL SENT. AWAITING RESPONSE.";
-          form.reset();
-          setTimeout(() => { status.textContent = ""; }, 4000);
-      })
-      .catch(error => {
-          status.textContent = "TRANSMISSION FAILED. INTERFERENCE DETECTED.";
-          setTimeout(() => { status.textContent = ""; }, 4000);
-      });
+    form.addEventListener('submit', () => {
+      status.textContent = "UPLINKING TO ORBITAL RELAY...";
     });
   }
 });
