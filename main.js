@@ -227,7 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- GitHub Live Feed ---
   const ghRepos = document.getElementById('gh-repos');
+  const ghGists = document.getElementById('gh-gists');
   const ghFollowers = document.getElementById('gh-followers');
+  const ghFollowing = document.getElementById('gh-following');
   const ghUpdated = document.getElementById('gh-updated');
   
   if(ghRepos) {
@@ -235,7 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         ghRepos.textContent = data.public_repos || '--';
+        if(ghGists) ghGists.textContent = data.public_gists || '0';
         ghFollowers.textContent = data.followers || '--';
+        if(ghFollowing) ghFollowing.textContent = data.following || '--';
         if(data.updated_at) {
           const date = new Date(data.updated_at);
           ghUpdated.textContent = date.toISOString().split('T')[0];

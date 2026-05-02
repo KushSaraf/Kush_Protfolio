@@ -1008,12 +1008,14 @@ footer {
     margin: 0;
     white-space: nowrap;
     flex-shrink: 0;
-    color: var(--muted-text);
+    color: var(--primary-accent);
+    opacity: 0.5;
     text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: color 0.3s, text-shadow 0.3s, opacity 0.3s;
   }
   .mobile-nav-links a.active {
     color: #fff;
+    opacity: 1;
     text-shadow: 0 0 8px var(--primary-accent);
   }
   .section-header h2 {
