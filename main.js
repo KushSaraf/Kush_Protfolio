@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
   typeLine();
 
-  // --- Clock (ZULU Time) ---
+  // --- Clock (LOCAL Time) ---
   const clockEl = document.getElementById('zulu-clock');
   setInterval(() => {
     const now = new Date();
-    const h = String(now.getUTCHours()).padStart(2, '0');
-    const m = String(now.getUTCMinutes()).padStart(2, '0');
-    const s = String(now.getUTCSeconds()).padStart(2, '0');
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const s = String(now.getSeconds()).padStart(2, '0');
     clockEl.textContent = `${h}:${m}:${s}`;
   }, 1000);
 
