@@ -601,6 +601,52 @@ section.visible {
   color: #ccc;
 }
 
+.field-ops-log {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--panel-border);
+  padding: 20px;
+  position: relative;
+  background: rgba(26, 35, 50, 0.15);
+}
+
+.field-op-entry {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 80px;
+  gap: 15px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(26, 35, 50, 0.8);
+  font-size: 0.85rem;
+}
+
+.field-op-entry:last-child {
+  border-bottom: none;
+}
+
+.field-op-rank {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.field-op-name {
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field-op-meta {
+  color: var(--muted-text);
+  font-size: 0.8rem;
+}
+
+.field-op-date {
+  text-align: right;
+  font-size: 0.75rem;
+}
+
 /* Contact / Comms */
 .comms-terminal {
   position: relative;
@@ -796,5 +842,18 @@ footer {
   }
   .mission-details .label {
     width: 80px;
+  }
+  .field-op-entry {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px 10px;
+  }
+  .field-op-meta {
+    grid-column: 2;
+  }
+  .field-op-date {
+    grid-column: 1 / -1;
+    text-align: left;
+    padding-left: 0;
   }
 }
