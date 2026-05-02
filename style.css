@@ -874,21 +874,27 @@ footer {
   cursor: pointer;
   color: var(--warning-accent);
 }
-#terminal-output {
+.terminal-body {
   flex-grow: 1;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+#terminal-output {
   color: #ccc;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 #terminal-output p {
   margin: 5px 0;
 }
 .terminal-input-line {
   display: flex;
+  align-items: center;
   color: var(--primary-accent);
 }
 .terminal-input-line .prompt {
   margin-right: 10px;
+  white-space: nowrap;
 }
 #terminal-input {
   background: transparent;

@@ -258,7 +258,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const p = document.createElement('p');
       p.textContent = text;
       terminalOutput.appendChild(p);
-      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+      const terminalBody = document.getElementById('terminal-body');
+      if (terminalBody) {
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
     }
     
     terminalInput.addEventListener('keydown', (e) => {

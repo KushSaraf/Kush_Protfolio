@@ -13,7 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;500;700;900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css?v=2.0">
+  <link rel="stylesheet" href="./style.css?v=2.1">
 </head>
 
 <body>
@@ -566,18 +566,20 @@
   <div id="terminal-overlay">
     <div class="terminal-window">
       <div class="terminal-window-header">KS-CONTROL TERMINAL <span id="close-terminal">[X]</span></div>
-      <div id="terminal-output">
-        <p>KS-CONTROL OS v2.0</p>
-        <p>Type 'help' for a list of commands.</p>
-      </div>
-      <div class="terminal-input-line">
-        <span class="prompt">KS-CONTROL:~$</span>
-        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+      <div class="terminal-body" id="terminal-body">
+        <div id="terminal-output">
+          <p>KS-CONTROL OS v2.0</p>
+          <p>Type 'help' for a list of commands.</p>
+        </div>
+        <div class="terminal-input-line">
+          <span class="prompt">KS-CONTROL:~$</span>
+          <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+        </div>
       </div>
     </div>
   </div>
 
-  <script type="module" src="./main.js?v=2.0"></script>
+  <script type="module" src="./main.js?v=2.1"></script>
 </body>
 
 </html>
