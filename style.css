@@ -29,6 +29,67 @@ body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+  cursor: none;
+}
+
+a, button, .radar-dot, .mission-card, .field-op-entry {
+  cursor: none;
+}
+
+/* Custom Drone Cursor */
+#drone-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 32px; height: 32px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 100000;
+  color: var(--primary-accent);
+}
+
+.target-bracket {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+.target-bracket.left { left: -10px; }
+.target-bracket.right { right: -10px; }
+
+.scan-radius {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 60px; height: 60px;
+  transform: translate(-50%, -50%) scale(0.5);
+  border: 1px dashed var(--primary-accent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s;
+  animation: radar-spin 4s linear infinite;
+}
+
+/* Cursor States */
+.drone-hover {
+  filter: drop-shadow(0 0 8px var(--primary-accent));
+}
+.drone-hover .target-bracket.left { left: -15px; opacity: 1; }
+.drone-hover .target-bracket.right { right: -15px; opacity: 1; }
+
+.drone-click svg {
+  animation: drone-fire 0.2s ease-out;
+}
+@keyframes drone-fire {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.3); filter: brightness(2) drop-shadow(0 0 10px #fff); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+.drone-scanning .scan-radius {
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 /* Typography */
@@ -855,5 +916,11 @@ footer {
     grid-column: 1 / -1;
     text-align: left;
     padding-left: 0;
+  }
+  #drone-cursor {
+    display: none;
+  }
+  body, a, button, .radar-dot, .mission-card, .field-op-entry {
+    cursor: auto;
   }
 }

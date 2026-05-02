@@ -89,9 +89,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     dot.addEventListener('click', () => {
-      const missionId = `mission-00${targets.indexOf(t) + 1}`;
-      const el = document.getElementById(missionId);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Flash the dot
+      dot.style.background = "#fff";
+      dot.style.boxShadow = "0 0 20px #fff";
+      
+      // Update readout
+      radarPanel.classList.add('active');
+      readoutTitle.textContent = "ACQUIRING TARGET...";
+      readoutDesc.textContent = "CALCULATING TRAJECTORY...";
+      
+      setTimeout(() => {
+        dot.style.background = "var(--warning-accent)";
+        dot.style.boxShadow = "0 0 15px var(--warning-accent)";
+        const missionId = `mission-00${targets.indexOf(t) + 1}`;
+        const el = document.getElementById(missionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => {
+             el.style.background = "rgba(0, 255, 159, 0.1)";
+             el.style.borderColor = "var(--primary-accent)";
+             setTimeout(() => {
+                 el.style.background = "";
+                 el.style.borderColor = "";
+             }, 800);
+          }, 500);
+        }
+      }, 500);
     });
 
     radar.appendChild(dot);
@@ -129,6 +152,66 @@ document.addEventListener("DOMContentLoaded", () => {
   if(form) {
     form.addEventListener('submit', () => {
       status.textContent = "UPLINKING TO ORBITAL RELAY...";
+    });
+  }
+
+  // --- Tab Title Flicker ---
+  const titles = [
+    "KS-CONTROL | OPERATOR: KUSH SARAF",
+    "KS-CONTROL | ALL SYSTEMS NOMINAL",
+    "KS-CONTROL | UPLINK ACTIVE ●"
+  ];
+  let titleIndex = 0;
+  setInterval(() => {
+    titleIndex = (titleIndex + 1) % titles.length;
+    document.title = titles[titleIndex];
+  }, 3000);
+
+  // --- Drone Cursor ---
+  const cursor = document.getElementById('drone-cursor');
+  if(cursor) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.2;
+      cursorY += (mouseY - cursorY) * 0.2;
+      cursor.style.left = `${cursorX}px`;
+      cursor.style.top = `${cursorY}px`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+    
+    // Hover states
+    const interactables = document.querySelectorAll('a, button, .radar-dot, .field-op-entry');
+    interactables.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('drone-hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('drone-hover'));
+    });
+    
+    const missionCards = document.querySelectorAll('.mission-card');
+    missionCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        cursor.classList.add('drone-hover');
+        cursor.classList.add('drone-scanning');
+      });
+      card.addEventListener('mouseleave', () => {
+        cursor.classList.remove('drone-hover');
+        cursor.classList.remove('drone-scanning');
+      });
+    });
+    
+    // Click state
+    document.addEventListener('mousedown', () => {
+      cursor.classList.add('drone-click');
+      setTimeout(() => cursor.classList.remove('drone-click'), 200);
     });
   }
 });
