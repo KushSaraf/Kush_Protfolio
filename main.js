@@ -305,4 +305,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // --- Mobile Nav Active State ---
+  const sections = document.querySelectorAll('section');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  
+  if(mobileNavLinks.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          mobileNavLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${entry.target.id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => sectionObserver.observe(sec));
+  }
 });
