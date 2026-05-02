@@ -13,7 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;500;700;900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css?v=2.3">
+  <link rel="stylesheet" href="./style.css?v=2.4">
 </head>
 
 <body>
@@ -169,6 +169,21 @@
             <div class="skill-bar"><span class="skill-label">Embedded / ESP32</span> <span
                 class="skill-meter">████████░░░░</span></div>
           </div>
+          
+          <!-- GitHub Live Feed -->
+          <div class="github-feed-panel">
+            <div class="panel-corner top-left">⌜</div>
+            <div class="panel-corner top-right">⌝</div>
+            <div class="panel-corner bottom-left">⌞</div>
+            <div class="panel-corner bottom-right">⌟</div>
+            <div class="feed-header">[LIVE GITHUB TELEMETRY]</div>
+            <div class="feed-stats">
+              <div><span class="label">REPOSITORIES:</span> <span class="gh-val" id="gh-repos">--</span></div>
+              <div><span class="label">FOLLOWERS:</span> <span class="gh-val" id="gh-followers">--</span></div>
+              <div><span class="label">LAST UPDATE:</span> <span class="gh-val" id="gh-updated">--</span></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -593,7 +608,7 @@
     </div>
   </div>
 
-  <script type="module" src="./main.js?v=2.3"></script>
+  <script type="module" src="./main.js?v=2.4"></script>
 </body>
 
 </html>
