@@ -228,21 +228,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- GitHub Live Feed ---
   const ghRepos = document.getElementById('gh-repos');
   const ghGists = document.getElementById('gh-gists');
-  const ghFollowers = document.getElementById('gh-followers');
-  const ghFollowing = document.getElementById('gh-following');
+  const ghOrigin = document.getElementById('gh-origin');
   const ghUpdated = document.getElementById('gh-updated');
   
   if(ghRepos) {
     fetch('https://api.github.com/users/KushSaraf')
       .then(response => response.json())
       .then(data => {
-        ghRepos.textContent = data.public_repos || '--';
+        ghRepos.textContent = data.public_repos || '0';
         if(ghGists) ghGists.textContent = data.public_gists || '0';
-        ghFollowers.textContent = data.followers || '--';
-        if(ghFollowing) ghFollowing.textContent = data.following || '--';
+        if(ghOrigin && data.created_at) {
+          const originDate = new Date(data.created_at);
+          ghOrigin.textContent = originDate.getFullYear();
+        }
         if(data.updated_at) {
-          const date = new Date(data.updated_at);
-          ghUpdated.textContent = date.toISOString().split('T')[0];
+          const updateDate = new Date(data.updated_at);
+          ghUpdated.textContent = updateDate.toISOString().split('T')[0];
         }
       })
       .catch(err => console.error("GitHub telemetry failed", err));
