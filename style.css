@@ -725,6 +725,10 @@ section.visible {
   font-size: 0.85rem;
 }
 
+.field-op-top-row {
+  display: contents;
+}
+
 .field-op-entry:last-child {
   border-bottom: none;
 }
@@ -1083,8 +1087,16 @@ footer {
   .dossier-table td:first-child {
     width: 90px;
   }
+  .skill-bars {
+    gap: 15px;
+  }
+  .skill-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
   .skill-label {
-    width: 100px;
+    width: auto;
   }
   .mission-card {
     padding: 15px;
