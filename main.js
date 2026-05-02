@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bootDiv = document.getElementById('boot-text');
   const bootSequence = document.getElementById('boot-sequence');
   let lineIndex = 0;
+  let bootFallback;
   
   function typeLine() {
     if (lineIndex < bootText.length) {
@@ -26,11 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           clearInterval(typeInterval);
           lineIndex++;
-          setTimeout(typeLine, 300); // Wait before next line
+          setTimeout(typeLine, 200); // Wait before next line
         }
-      }, 30); // Typing speed
+      }, 20); // Typing speed
     } else {
       // Boot finished
+      clearTimeout(bootFallback);
       setTimeout(() => {
         bootSequence.classList.add('scanline-flash');
         setTimeout(() => {
@@ -41,7 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
-  typeLine();
+  if (window.innerWidth < 768) {
+    bootSequence.style.display = 'none';
+    document.body.classList.add('booted');
+  } else {
+    bootFallback = setTimeout(() => {
+      bootSequence.style.display = 'none';
+      document.body.classList.add('booted');
+    }, 4000);
+    typeLine();
+  }
 
   // --- Clock (LOCAL Time) ---
   const clockEl = document.getElementById('zulu-clock');
