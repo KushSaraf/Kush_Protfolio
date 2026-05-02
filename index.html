@@ -64,8 +64,20 @@
       <a href="#achievements" class="nav-link">[MEDALS]</a>
       <a href="#contact" class="nav-link">[COMMS]</a>
     </div>
-    <div class="radar-sweep-line"></div>
+    <div class="nav-right">
+      <div class="blinking-dot"></div>
+      <span class="uplink-text">UPLINK ACTIVE</span>
+    </div>
   </header>
+
+  <!-- Mobile Bottom Nav -->
+  <nav id="mobile-nav">
+    <a href="#about">[👤]</a>
+    <a href="#projects">[📋]</a>
+    <a href="#skills">[🔧]</a>
+    <a href="#research">[📡]</a>
+    <a href="#contact">[✉️]</a>
+  </nav>
 
   <main>
     <!-- Hero / Radar Section -->
@@ -201,14 +213,16 @@
           <div class="panel-corner bottom-right">⌟</div>
           <div class="mission-header">
             <span class="mission-id">MISSION-002</span>
-            <span class="mission-status status-progress">[STATUS: IN PROGRESS]</span>
+            <span class="mission-status status-progress">[STATUS: ACTIVE DEVELOPMENT]</span>
           </div>
           <hr class="scan-hr">
-          <h3 class="mission-title">AUTONOMOUS UAV DOCKING SYSTEM</h3>
+          <h3 class="mission-title">GAGANDRONE</h3>
           <div class="mission-details">
-            <div><span class="label">CLIENT :</span> ISRO IRoC 2026</div>
-            <div><span class="label">TECH :</span> AprilTag, MAVLink, ROS2</div>
-            <div><span class="label">OBJECTIVE:</span> Precision landing in GPS-denied environments</div>
+            <div><span class="label">TYPE     :</span> Independent Research Project</div>
+            <div><span class="label">TECH     :</span> AprilTag, MAVLink, ROS2, Gazebo SITL, PX4</div>
+            <div><span class="label">OBJECTIVE:</span> Vision-guided precision landing in GPS-denied environments. Autonomous return-to-base architecture for unmanned aerial systems.</div>
+            <div><span class="label">HARDWARE :</span> Custom docking station + onboard sensor integration</div>
+            <div><span class="label">ORIGIN   :</span> ISRO IRoC 2026 — Top 250 of 2800 teams, proposal round</div>
           </div>
           <div class="mission-links">
             <a href="#" target="_blank">[RESTRICTED ↗]</a>
@@ -547,6 +561,21 @@
   <footer>
     KS-GCS v1.0 — ALL SYSTEMS NOMINAL — &copy; 2026 KUSH SARAF <span class="blink-cursor">█</span>
   </footer>
+
+  <!-- Terminal Easter Egg -->
+  <div id="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-window-header">KS-CONTROL TERMINAL <span id="close-terminal">[X]</span></div>
+      <div id="terminal-output">
+        <p>KS-CONTROL OS v2.0</p>
+        <p>Type 'help' for a list of commands.</p>
+      </div>
+      <div class="terminal-input-line">
+        <span class="prompt">KS-CONTROL:~$</span>
+        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="./main.js"></script>
 </body>

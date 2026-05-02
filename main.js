@@ -214,4 +214,82 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => cursor.classList.remove('drone-click'), 200);
     });
   }
+
+  // --- GitHub Live Feed ---
+  const ghRepos = document.getElementById('gh-repos');
+  const ghFollowers = document.getElementById('gh-followers');
+  const ghUpdated = document.getElementById('gh-updated');
+  
+  if(ghRepos) {
+    fetch('https://api.github.com/users/KushSaraf')
+      .then(response => response.json())
+      .then(data => {
+        ghRepos.textContent = data.public_repos || '--';
+        ghFollowers.textContent = data.followers || '--';
+        if(data.updated_at) {
+          const date = new Date(data.updated_at);
+          ghUpdated.textContent = date.toISOString().split('T')[0];
+        }
+      })
+      .catch(err => console.error("GitHub telemetry failed", err));
+  }
+
+  // --- Terminal Easter Egg ---
+  const terminalOverlay = document.getElementById('terminal-overlay');
+  const closeTerminal = document.getElementById('close-terminal');
+  const terminalInput = document.getElementById('terminal-input');
+  const terminalOutput = document.getElementById('terminal-output');
+  
+  if(terminalOverlay) {
+    // Open on 'T' key
+    document.addEventListener('keydown', (e) => {
+      // Don't open if typing in an input
+      if (e.key.toLowerCase() === 't' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        terminalOverlay.classList.add('active');
+        terminalInput.focus();
+      }
+    });
+    
+    closeTerminal.addEventListener('click', () => {
+      terminalOverlay.classList.remove('active');
+    });
+    
+    function printTerminal(text) {
+      const p = document.createElement('p');
+      p.textContent = text;
+      terminalOutput.appendChild(p);
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+    
+    terminalInput.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter') {
+        const cmd = terminalInput.value.trim().toLowerCase();
+        printTerminal(`KS-CONTROL:~$ ${cmd}`);
+        terminalInput.value = '';
+        
+        switch(cmd) {
+          case 'help':
+            printTerminal("AVAILABLE COMMANDS: whoami, skills, clear, exit");
+            break;
+          case 'whoami':
+            printTerminal("OPERATOR: KUSH SARAF | AUTONOMOUS SYSTEMS | BATCH 2028");
+            break;
+          case 'skills':
+            printTerminal("LOADING SUBSYSTEMS... [████████░░] 80% NOMINAL");
+            break;
+          case 'clear':
+            terminalOutput.innerHTML = '';
+            break;
+          case 'exit':
+            terminalOverlay.classList.remove('active');
+            break;
+          case '':
+            break;
+          default:
+            printTerminal(`Command not found: ${cmd}`);
+            break;
+        }
+      }
+    });
+  }
 });
