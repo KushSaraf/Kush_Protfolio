@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: "mission-003", x: 75, y: 65, name: "MISSION-003", desc: "Smart Child Safety" },
     { id: "mission-004", x: 30, y: 75, name: "MISSION-004", desc: "Jarvis for Windows" },
     { id: "assignments", x: 50, y: 45, name: "FIELD ASSIGNMENTS", desc: "LTTRBX — AI DEPLOYMENT" },
-    { id: "mission-006", x: 80, y: 40, name: "MISSION-006", desc: "Employee Monitoring" }
+    { id: "mission-005", x: 80, y: 40, name: "MISSION-005", desc: "Employee Monitoring" }
   ];
 
   targets.forEach(t => {

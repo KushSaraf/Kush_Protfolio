@@ -569,7 +569,7 @@ section.visible {
 .mission-details .label {
   color: var(--muted-text);
   flex-shrink: 0;
-  width: 100px;
+  width: 125px;
 }
 
 .mission-links {
