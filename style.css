@@ -1087,35 +1087,36 @@ footer {
   .mission-card {
     padding: 15px;
   }
-  .mission-details .label {
-    width: 80px;
+  /* Mission & Assignment Details Mobile Flow */
+  .mission-card {
+    padding: 15px;
   }
-  
-  /* Assignment Card Mobile Stack */
   .assignment-card {
     padding: 15px;
   }
-  .assignment-card .mission-details {
+  .mission-details {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-  .assignment-card .mission-details div {
-    display: flex;
-    flex-direction: column;
+  .mission-details div {
+    display: block;
     border-bottom: 1px dashed var(--panel-border);
     padding-bottom: 8px;
     margin-bottom: 0;
+    line-height: 1.4;
   }
-  .assignment-card .mission-details div:last-child {
+  .mission-details div:last-child {
     border-bottom: none;
   }
-  .assignment-card .mission-details .label {
+  .mission-details .label {
+    display: inline-block;
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     width: auto;
-    margin-bottom: 4px;
+    margin-right: 8px;
+    margin-bottom: 2px;
   }
   .assignment-log-entry {
     flex-direction: column;
