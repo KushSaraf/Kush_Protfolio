@@ -88,6 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.style.boxShadow = "0 0 8px #ff6b35";
     });
 
+    dot.addEventListener('click', () => {
+      const missionId = `mission-00${targets.indexOf(t) + 1}`;
+      const el = document.getElementById(missionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
     radar.appendChild(dot);
   });
 
@@ -110,13 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        
-        // Optional power-on flash effect
-        entry.target.style.background = 'rgba(0, 255, 159, 0.1)';
-        setTimeout(() => {
-          entry.target.style.background = 'transparent';
-        }, 100);
-        
         observer.unobserve(entry.target);
       }
     });

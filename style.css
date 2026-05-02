@@ -99,23 +99,32 @@ h1, h2, h3 {
 /* Header */
 header {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  gap: 10px;
   border-bottom: 1px solid var(--panel-border);
   position: fixed;
   top: 0; left: 0; width: 100%;
   background: rgba(10, 12, 16, 0.9);
   backdrop-filter: blur(5px);
   z-index: 1000;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .nav-left span, .nav-center span {
   margin-right: 15px;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: var(--muted-text);
 }
 
 .nav-right {
@@ -194,6 +203,8 @@ section.visible {
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
+  opacity: 1;
+  transform: none;
 }
 
 .radar-container {
@@ -458,7 +469,11 @@ section.visible {
 }
 
 .status-complete { color: var(--primary-accent); }
-.status-progress { color: var(--warning-accent); animation: blink 1.5s infinite; }
+.status-progress { 
+  color: var(--warning-accent); 
+  animation: blink 1.5s infinite; 
+  text-shadow: 0 0 8px var(--warning-accent);
+}
 .status-deployed { color: var(--secondary-accent); }
 .status-learning { color: var(--warning-accent); }
 .status-nominal { color: var(--primary-accent); }
@@ -472,6 +487,8 @@ section.visible {
 .mission-title {
   margin-bottom: 15px;
   color: #fff;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
 }
 
 .mission-details div {
@@ -564,8 +581,8 @@ section.visible {
 }
 
 .glow-green {
-  border-color: rgba(0, 255, 159, 0.5);
-  box-shadow: inset 0 0 20px rgba(0, 255, 159, 0.1);
+  border-color: rgba(0, 255, 159, 0.7);
+  box-shadow: 0 0 25px rgba(0, 255, 159, 0.2), inset 0 0 20px rgba(0, 255, 159, 0.1);
 }
 
 .glow-green .orbitron {
@@ -686,10 +703,11 @@ footer {
   }
   .nav-left {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    font-size: 0.8rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.7rem;
     text-align: center;
     width: 100%;
   }
