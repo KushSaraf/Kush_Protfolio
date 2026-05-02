@@ -60,11 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const readoutDesc = document.getElementById('readout-desc');
 
   const targets = [
-    { x: 30, y: 40, name: "MISSION-001", desc: "Multi-UAV Swarm" },
-    { x: 70, y: 20, name: "MISSION-002", desc: "ISRO UAV Docking" },
-    { x: 60, y: 70, name: "MISSION-003", desc: "Smart Child Safety" },
-    { x: 20, y: 80, name: "MISSION-004", desc: "Jarvis for Windows" },
-    { x: 45, y: 65, name: "MISSION-005", desc: "Employee Monitoring" }
+    { x: 25, y: 35, name: "MISSION-001", desc: "Multi-UAV Swarm" },
+    { x: 65, y: 25, name: "MISSION-002", desc: "ISRO UAV Docking" },
+    { x: 75, y: 65, name: "MISSION-003", desc: "Smart Child Safety" },
+    { x: 30, y: 75, name: "MISSION-004", desc: "Jarvis for Windows" },
+    { x: 50, y: 45, name: "MISSION-005", desc: "AI Internship — LTTRBX" },
+    { x: 80, y: 40, name: "MISSION-006", desc: "Employee Monitoring" }
   ];
 
   targets.forEach(t => {

@@ -52,8 +52,8 @@ h1, h2, h3 {
     to bottom,
     transparent,
     transparent 2px,
-    rgba(0, 255, 159, 0.03) 2px,
-    rgba(0, 255, 159, 0.03) 4px
+    rgba(0, 255, 159, 0.05) 2px,
+    rgba(0, 255, 159, 0.05) 4px
   );
   pointer-events: none;
   z-index: 9999;
@@ -198,7 +198,7 @@ section.visible {
 
 .radar-container {
   position: relative;
-  width: 300px; height: 300px;
+  width: 450px; height: 450px;
   margin-bottom: 40px;
 }
 
@@ -218,6 +218,7 @@ section.visible {
   width: 66%; height: 66%;
   border: 1px solid rgba(0,255,159,0.3);
   border-radius: 50%;
+  pointer-events: none;
 }
 .radar-rings::before {
   content: '';
@@ -233,6 +234,7 @@ section.visible {
   position: absolute;
   top: 0; left: 50%; width: 1px; height: 100%;
   background: rgba(0,255,159,0.3);
+  pointer-events: none;
 }
 .radar-crosshair::before {
   content: '';
@@ -249,6 +251,7 @@ section.visible {
   transform-origin: 0 50%;
   animation: radar-spin 4s linear infinite;
   box-shadow: 0 0 15px var(--primary-accent);
+  pointer-events: none;
 }
 .radar-sweep::after {
   content: '';
@@ -266,12 +269,13 @@ section.visible {
 
 .radar-dot {
   position: absolute;
-  width: 6px; height: 6px;
+  width: 8px; height: 8px;
   background: var(--warning-accent);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--warning-accent);
+  box-shadow: 0 0 10px var(--warning-accent);
   cursor: pointer;
   transition: transform 0.2s;
+  z-index: 10;
 }
 
 .radar-dot:hover {
@@ -349,6 +353,7 @@ section.visible {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 40px;
+  align-items: center;
 }
 
 .hex-frame {
@@ -472,11 +477,12 @@ section.visible {
 .mission-details div {
   margin-bottom: 5px;
   color: #ccc;
+  display: flex;
 }
 
 .mission-details .label {
   color: var(--muted-text);
-  display: inline-block;
+  flex-shrink: 0;
   width: 100px;
 }
 
@@ -672,6 +678,9 @@ footer {
     gap: 10px;
     justify-content: center;
   }
+  .nav-center, .nav-right {
+    display: none;
+  }
   .nav-links {
     display: flex;
     flex-wrap: wrap;
@@ -680,6 +689,9 @@ footer {
   }
   .nav-links a {
     margin: 0;
+  }
+  .section-header h2 {
+    font-size: 1.2rem;
   }
   .about-grid, .mission-grid, .achievements-container {
     grid-template-columns: 1fr;
