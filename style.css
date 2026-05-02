@@ -515,6 +515,9 @@ section.visible {
   padding: 24px;
   background: rgba(26, 35, 50, 0.2);
   transition: background 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
 }
 
 .mission-card:hover {
@@ -552,6 +555,11 @@ section.visible {
   letter-spacing: 0.08em;
 }
 
+.mission-details {
+  margin: 15px 0;
+  font-size: 0.85rem;
+  overflow: hidden;
+}
 .mission-details div {
   margin-bottom: 5px;
   color: #ccc;
@@ -565,8 +573,39 @@ section.visible {
 }
 
 .mission-links {
-  margin-top: 20px;
+  margin-top: auto;
   text-align: right;
+}
+
+/* Assignment Cards */
+.assignment-card {
+  position: relative;
+  border: 1px solid var(--panel-border);
+  padding: 28px;
+  background: rgba(0, 170, 255, 0.03);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+}
+.assignment-card:hover {
+  border-color: var(--secondary-accent);
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.1);
+}
+.assignment-log {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--panel-border);
+}
+.assignment-log-entry {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+.assignment-log-entry .op-label {
+  color: var(--secondary-accent);
+  font-weight: bold;
+  flex-shrink: 0;
 }
 .mission-links a {
   color: var(--secondary-accent);
@@ -974,6 +1013,10 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  .mission-card {
+    height: auto;
+    min-height: auto;
   }
   .hex-frame {
     width: clamp(180px, 50vw, 250px);

@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const readoutDesc = document.getElementById('readout-desc');
 
   const targets = [
-    { x: 25, y: 35, name: "MISSION-001", desc: "Multi-UAV Swarm" },
-    { x: 65, y: 25, name: "MISSION-002", desc: "ISRO UAV Docking" },
-    { x: 75, y: 65, name: "MISSION-003", desc: "Smart Child Safety" },
-    { x: 30, y: 75, name: "MISSION-004", desc: "Jarvis for Windows" },
-    { x: 50, y: 45, name: "MISSION-005", desc: "AI Internship — LTTRBX" },
-    { x: 80, y: 40, name: "MISSION-006", desc: "Employee Monitoring" }
+    { id: "mission-001", x: 25, y: 35, name: "MISSION-001", desc: "Multi-UAV Swarm" },
+    { id: "mission-002", x: 65, y: 25, name: "MISSION-002", desc: "ISRO UAV Docking" },
+    { id: "mission-003", x: 75, y: 65, name: "MISSION-003", desc: "Smart Child Safety" },
+    { id: "mission-004", x: 30, y: 75, name: "MISSION-004", desc: "Jarvis for Windows" },
+    { id: "assignments", x: 50, y: 45, name: "FIELD ASSIGNMENTS", desc: "LTTRBX — AI DEPLOYMENT" },
+    { id: "mission-006", x: 80, y: 40, name: "MISSION-006", desc: "Employee Monitoring" }
   ];
 
   targets.forEach(t => {
@@ -101,8 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         dot.style.background = "var(--warning-accent)";
         dot.style.boxShadow = "0 0 15px var(--warning-accent)";
-        const missionId = `mission-00${targets.indexOf(t) + 1}`;
-        const el = document.getElementById(missionId);
+        const el = document.getElementById(t.id);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'center' });
           setTimeout(() => {
