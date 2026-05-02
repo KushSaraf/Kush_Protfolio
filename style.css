@@ -1022,11 +1022,22 @@ footer {
     opacity: 1;
     text-shadow: 0 0 8px var(--primary-accent);
   }
+  section {
+    margin-bottom: 45px;
+  }
+  .section-header {
+    margin-bottom: 15px;
+    padding-bottom: 6px;
+  }
   .section-header h2 {
-    font-size: 1.2rem;
+    font-size: clamp(0.85rem, 4vw, 1.1rem);
+    letter-spacing: 0.05em;
   }
   .about-grid, .mission-grid, .achievements-container, .subsystems-grid {
     grid-template-columns: 1fr;
+  }
+  .about-grid {
+    gap: 20px;
   }
   .about-photo-col {
     display: flex;
@@ -1041,6 +1052,7 @@ footer {
   .hex-frame {
     width: clamp(180px, 50vw, 250px);
     height: clamp(180px, 50vw, 250px);
+    margin-bottom: 10px;
   }
   #hero {
     margin-top: 80px;
@@ -1084,23 +1096,56 @@ footer {
   .hero-title .subtitle {
     font-size: 0.8rem;
   }
+  .dossier-table {
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+  }
+  .dossier-table td {
+    padding: 3px 0;
+  }
   .dossier-table td:first-child {
-    width: 90px;
+    width: 85px;
+  }
+  .photo-labels {
+    margin-bottom: 10px;
+  }
+  .bio-text {
+    margin-bottom: 15px;
+    font-size: 0.8rem;
   }
   .skill-bars {
-    gap: 15px;
+    gap: 6px;
   }
   .skill-bar {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
   }
-  .skill-label {
+  .skill-label, .skill-meter {
+    font-size: 0.78rem;
     width: auto;
+  }
+  .intel-reports {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   .mission-card {
     padding: 15px;
   }
+  .mission-header {
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+  .mission-id, .mission-status {
+    font-size: 0.7rem;
+  }
+  .mission-status {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   /* Mission & Assignment Details Mobile Flow */
   .mission-card {
     padding: 15px;
@@ -1162,9 +1207,18 @@ footer {
   /* Medal Cards Mobile */
   .medal-card {
     padding: 15px;
+    text-align: left;
   }
   .medal-card h3 {
     font-size: clamp(0.8rem, 3vw, 1rem);
+    text-align: center;
+  }
+  .medal-icon {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .medal-details {
+    text-align: left;
   }
   #drone-cursor {
     display: none;
