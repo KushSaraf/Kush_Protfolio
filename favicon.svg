@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c10"/>
+      <stop offset="100%" stop-color="#12161f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hexagon Background -->
+  <polygon points="50,5 93,30 93,70 50,95 7,70 7,30" fill="url(#bgGrad)" stroke="#00ff9f" stroke-width="2"/>
+  <polygon points="50,10 88,33 88,67 50,90 12,67 12,33" fill="none" stroke="#ff6b35" stroke-width="1" stroke-dasharray="4,2" opacity="0.5"/>
+
+  <!-- Letter K -->
+  <path d="M 35 35 L 35 65" stroke="#00ff9f" stroke-width="6" stroke-linecap="square"/>
+  <path d="M 50 35 L 35 50 L 50 65" fill="none" stroke="#00ff9f" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- Letter S -->
+  <path d="M 68 35 L 55 35 L 55 48 L 65 48 C 67 48 68 49 68 51 L 68 65 L 55 65" fill="none" stroke="#00ff9f" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
