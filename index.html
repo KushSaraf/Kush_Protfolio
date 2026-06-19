@@ -45,6 +45,15 @@
   <!-- Header / Navigation -->
   <header id="top-nav">
     <div class="nav-left">
+      <svg class="nav-logo" width="22" height="22" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <rect x="11" y="11" width="6" height="6" rx="1"/>
+        <path d="M11 11 L7 7 M17 11 L21 7 M11 17 L7 21 M17 17 L21 21"/>
+        <circle cx="6.5" cy="6.5" r="2.5"/>
+        <circle cx="21.5" cy="6.5" r="2.5"/>
+        <circle cx="6.5" cy="21.5" r="2.5"/>
+        <circle cx="21.5" cy="21.5" r="2.5"/>
+        <circle cx="14" cy="14" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
       <span class="nav-tag">[KS-GCS v1.0]</span>
       <span class="nav-operator">OPERATOR: KUSH SARAF</span>
       <span class="nav-status">STATUS: ONLINE</span>
@@ -197,7 +206,7 @@
         <div class="mission-details">
           <div><span class="label">ORGANIZATION:</span> HCR LAB — IIT GANDHINAGAR</div>
           <div><span class="label">ROLE        :</span> RESEARCH INTERN</div>
-          <div><span class="label">DURATION    :</span> MAY 2026 — JUL 2026</div>
+          <div><span class="label">DURATION    :</span> MAY 2026 — PRESENT</div>
           <div><span class="label">LOCATION    :</span> IIT GANDHINAGAR, GUJARAT</div>
           <div><span class="label">CLEARANCE   :</span> WEARABLE SENSING / EMBEDDED HW</div>
         </div>
@@ -283,36 +292,14 @@
         <h2 class="orbitron">MISSION LOGS</h2>
       </div>
       <div class="mission-grid">
-        <!-- Mission 1 -->
-        <div class="mission-card" id="mission-001">
-          <div class="panel-corner top-left">⌜</div>
-          <div class="panel-corner top-right">⌝</div>
-          <div class="panel-corner bottom-left">⌞</div>
-          <div class="panel-corner bottom-right">⌟</div>
-          <div class="mission-header">
-            <span class="mission-id">MISSION-001</span>
-            <span class="mission-status status-complete">[STATUS: COMPLETE]</span>
-          </div>
-          <hr class="scan-hr">
-          <h3 class="mission-title">MULTI-UAV SWARM COORDINATION</h3>
-          <div class="mission-details">
-            <div><span class="label">PLATFORM :</span> Ardupilot SITL + Gazebo</div>
-            <div><span class="label">UNITS :</span> 4 UAVs</div>
-            <div><span class="label">OBJECTIVE:</span> Area coverage, collision-safe lawnmower paths</div>
-          </div>
-          <div class="mission-links">
-            <a href="https://github.com/KushSaraf/ardupilot-swarm-deployment" target="_blank">[GITHUB ↗]</a>
-          </div>
-        </div>
-
-        <!-- Mission 2 -->
+        <!-- Mission 2 (ACTIVE — shown first) -->
         <div class="mission-card" id="mission-002">
           <div class="panel-corner top-left">⌜</div>
           <div class="panel-corner top-right">⌝</div>
           <div class="panel-corner bottom-left">⌞</div>
           <div class="panel-corner bottom-right">⌟</div>
           <div class="mission-header">
-            <span class="mission-id">MISSION-002</span>
+            <span class="mission-id">MISSION-001</span>
             <span class="mission-status status-progress">[STATUS: ACTIVE DEVELOPMENT]</span>
           </div>
           <hr class="scan-hr">
@@ -326,6 +313,28 @@
           </div>
           <div class="mission-links">
             <a href="#" target="_blank">[RESTRICTED ↗]</a>
+          </div>
+        </div>
+
+        <!-- Mission 1 -->
+        <div class="mission-card" id="mission-001">
+          <div class="panel-corner top-left">⌜</div>
+          <div class="panel-corner top-right">⌝</div>
+          <div class="panel-corner bottom-left">⌞</div>
+          <div class="panel-corner bottom-right">⌟</div>
+          <div class="mission-header">
+            <span class="mission-id">MISSION-002</span>
+            <span class="mission-status status-complete">[STATUS: COMPLETE]</span>
+          </div>
+          <hr class="scan-hr">
+          <h3 class="mission-title">MULTI-UAV SWARM COORDINATION</h3>
+          <div class="mission-details">
+            <div><span class="label">PLATFORM :</span> Ardupilot SITL + Gazebo</div>
+            <div><span class="label">UNITS :</span> 4 UAVs</div>
+            <div><span class="label">OBJECTIVE:</span> Area coverage, collision-safe lawnmower paths</div>
+          </div>
+          <div class="mission-links">
+            <a href="https://github.com/KushSaraf/ardupilot-swarm-deployment" target="_blank">[GITHUB ↗]</a>
           </div>
         </div>
 

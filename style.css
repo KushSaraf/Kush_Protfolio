@@ -176,8 +176,22 @@ header {
   letter-spacing: 0.1em;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
 .nav-left span, .nav-center span {
   margin-right: 15px;
+}
+
+.nav-logo {
+  color: var(--primary-accent);
+  filter: drop-shadow(0 0 5px var(--primary-accent));
+  margin-right: 10px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  animation: drone-spin 8s linear infinite;
 }
 
 .nav-center {
@@ -204,6 +218,11 @@ header {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
+}
+
+@keyframes drone-spin {
+  0%, 100% { filter: drop-shadow(0 0 5px var(--primary-accent)); }
+  50% { filter: drop-shadow(0 0 10px var(--primary-accent)) drop-shadow(0 0 3px var(--secondary-accent)); }
 }
 
 .nav-links a {
