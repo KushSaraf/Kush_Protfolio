@@ -59,7 +59,7 @@
     </div>
     <div class="nav-links">
       <a href="#about" class="nav-link">[PROFILE]</a>
-      <a href="#assignments" class="nav-link">[ASSIGNMENTS]</a>
+      <a href="#assignments" class="nav-link">[DEPLOYMENTS]</a>
       <a href="#projects" class="nav-link">[MISSIONS]</a>
       <a href="#skills" class="nav-link">[SYSTEMS]</a>
       <a href="#research" class="nav-link">[INTEL]</a>
@@ -99,8 +99,9 @@
       </div>
 
       <div class="telemetry-stats">
-        <span class="stat">ACTIVE UNITS: <span class="number flicker" data-val="6">6</span> MISSIONS</span>
-        <span class="stat">SYSTEMS OPERATIONAL: <span class="number flicker" data-val="12">12</span></span>
+        <span class="stat">ACTIVE MISSIONS: <span class="number flicker" data-val="6">6</span></span>
+        <span class="stat">SYSTEMS OPERATIONAL: <span class="number flicker" data-val="15">15</span></span>
+        <span class="stat">DEPLOYMENTS: <span class="number flicker" data-val="3">3</span></span>
         <span class="stat">COMMENDATIONS: <span class="number flicker" data-val="2">2</span></span>
       </div>
 
@@ -124,6 +125,7 @@
           <div class="photo-labels">
             <div>OPERATOR ID: KS-001</div>
             <div>CLEARANCE: FULL ACCESS</div>
+            <div>AFFIL: KU × IIT-GN HCR</div>
           </div>
         </div>
         <div class="about-data-col">
@@ -146,11 +148,15 @@
             </tr>
             <tr>
               <td>SPECIALTY</td>
-              <td>: AUTONOMOUS SYSTEMS, AI/ML</td>
+              <td>: AUTONOMOUS SYSTEMS, GAIT ANALYSIS, AI/ML</td>
+            </tr>
+            <tr>
+              <td>LAB</td>
+              <td>: HCR LAB — IIT GANDHINAGAR</td>
             </tr>
             <tr>
               <td>STATUS</td>
-              <td>: ACTIVELY BUILDING</td>
+              <td>: ACTIVELY DEPLOYING</td>
             </tr>
           </table>
           <div class="skill-bars">
@@ -164,6 +170,7 @@
                 class="skill-meter">█████████░░░</span></div>
             <div class="skill-bar"><span class="skill-label">Embedded / ESP32</span> <span
                 class="skill-meter">████████░░░░</span></div>
+            <div class="skill-bar"><span class="skill-label">PCB / Soldering</span> <span class="skill-meter">██████░░░░░░</span></div>
           </div>
 
         </div>
@@ -176,6 +183,7 @@
         <h2 class="orbitron">FIELD ASSIGNMENTS — EXTERNAL DEPLOYMENTS</h2>
       </div>
       
+      <!-- HCR Lab IIT-GN -->
       <div class="assignment-card">
         <div class="panel-corner top-left">⌜</div>
         <div class="panel-corner top-right">⌝</div>
@@ -183,6 +191,68 @@
         <div class="panel-corner bottom-right">⌟</div>
         <div class="mission-header">
           <span class="mission-id">DEPLOYMENT-001</span>
+          <span class="mission-status status-progress">[TOUR: ACTIVE ●]</span>
+        </div>
+        <hr class="scan-hr">
+        <div class="mission-details">
+          <div><span class="label">ORGANIZATION:</span> HCR LAB — IIT GANDHINAGAR</div>
+          <div><span class="label">ROLE        :</span> RESEARCH INTERN</div>
+          <div><span class="label">DURATION    :</span> MAY 2026 — JUL 2026</div>
+          <div><span class="label">LOCATION    :</span> IIT GANDHINAGAR, GUJARAT</div>
+          <div><span class="label">CLEARANCE   :</span> WEARABLE SENSING / EMBEDDED HW</div>
+        </div>
+        <div class="assignment-log">
+          <span style="display:block; color:var(--muted-text); margin-bottom:15px; font-size:0.8rem; letter-spacing:0.1em;">OPERATION LOG:</span>
+          <div class="assignment-log-entry">
+            <span class="op-label">OP-01</span>
+            <span>Developed a wearable sensing system using pneumatic insoles and IMUs for estimating Vertical Ground Reaction Forces (vGRF) during real-world gait and movement analysis.</span>
+          </div>
+          <div class="assignment-log-entry">
+            <span class="op-label">OP-02</span>
+            <span>Designed PCBs, performed soldering and sensor integration, implemented I2C and UART communication protocols for reliable data acquisition. Processed synchronized pressure and inertial data for ML-based gait characterization.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reude Technologies -->
+      <div class="assignment-card">
+        <div class="panel-corner top-left">⌜</div>
+        <div class="panel-corner top-right">⌝</div>
+        <div class="panel-corner bottom-left">⌞</div>
+        <div class="panel-corner bottom-right">⌟</div>
+        <div class="mission-header">
+          <span class="mission-id">DEPLOYMENT-002</span>
+          <span class="mission-status status-progress">[TOUR: ACTIVE ●]</span>
+        </div>
+        <hr class="scan-hr">
+        <div class="mission-details">
+          <div><span class="label">ORGANIZATION:</span> REUDE TECHNOLOGIES</div>
+          <div><span class="label">ROLE        :</span> UAV NAVIGATION &amp; CONTROL INTERN</div>
+          <div><span class="label">DURATION    :</span> PRESENT</div>
+          <div><span class="label">LOCATION    :</span> REMOTE</div>
+          <div><span class="label">CLEARANCE   :</span> UAV AUTONOMY / VINS</div>
+        </div>
+        <div class="assignment-log">
+          <span style="display:block; color:var(--muted-text); margin-bottom:15px; font-size:0.8rem; letter-spacing:0.1em;">OPERATION LOG:</span>
+          <div class="assignment-log-entry">
+            <span class="op-label">OP-01</span>
+            <span>Implementing VINS-based visual-inertial navigation pipelines for GPS-denied UAV autonomy — integrating camera + IMU data for real-time state estimation and trajectory tracking.</span>
+          </div>
+          <div class="assignment-log-entry">
+            <span class="op-label">OP-02</span>
+            <span>Developing MAVLink offboard control and ROS2-based autonomy modules for UAV navigation and control; validating performance through SITL simulation prior to hardware deployment.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LTTRBX -->
+      <div class="assignment-card">
+        <div class="panel-corner top-left">⌜</div>
+        <div class="panel-corner top-right">⌝</div>
+        <div class="panel-corner bottom-left">⌞</div>
+        <div class="panel-corner bottom-right">⌟</div>
+        <div class="mission-header">
+          <span class="mission-id">DEPLOYMENT-003</span>
           <span class="mission-status status-deployed">[TOUR: COMPLETE]</span>
         </div>
         <hr class="scan-hr">
@@ -193,15 +263,12 @@
           <div><span class="label">LOCATION    :</span> REMOTE (WFH)</div>
           <div><span class="label">CLEARANCE   :</span> AI/ML SYSTEMS</div>
         </div>
-        
         <div class="assignment-log">
           <span style="display:block; color:var(--muted-text); margin-bottom:15px; font-size:0.8rem; letter-spacing:0.1em;">OPERATION LOG:</span>
-          
           <div class="assignment-log-entry">
             <span class="op-label">OP-01</span>
             <span>NLP-based property recommendation and lead-matching engine integrated into real estate CRM platform. ML ranking models + text feature extraction. Scale: 1000+ property listings and user queries.</span>
           </div>
-          
           <div class="assignment-log-entry">
             <span class="op-label">OP-02</span>
             <span>ML financial forecasting pipeline on 10+ years of historical market data. Short-term trading signals and long-term trend predictions using regression and ensemble models.</span>
@@ -234,7 +301,7 @@
             <div><span class="label">OBJECTIVE:</span> Area coverage, collision-safe lawnmower paths</div>
           </div>
           <div class="mission-links">
-            <a href="https://github.com/KushSaraf" target="_blank">[GITHUB ↗]</a>
+            <a href="https://github.com/KushSaraf/ardupilot-swarm-deployment" target="_blank">[GITHUB ↗]</a>
           </div>
         </div>
 
@@ -280,7 +347,7 @@
             <div><span class="label">OBJECTIVE:</span> Wearable proximity alert up to 20m</div>
           </div>
           <div class="mission-links">
-            <a href="https://github.com/KushSaraf" target="_blank">[GITHUB ↗]</a>
+            <a href="https://github.com/KushSaraf/child_safety" target="_blank">[GITHUB ↗]</a>
           </div>
         </div>
 
@@ -324,7 +391,7 @@
             <div><span class="label">DATASET :</span> 1000+ labeled images</div>
           </div>
           <div class="mission-links">
-            <a href="https://github.com/KushSaraf" target="_blank">[GITHUB ↗]</a>
+            <a href="https://github.com/KushSaraf/AI_Employee_Tracking" target="_blank">[GITHUB ↗]</a>
           </div>
         </div>
       </div>
@@ -378,8 +445,21 @@
           <div class="subsystem-header">SUBSYSTEM: EMBEDDED</div>
           <hr class="scan-hr">
           <div class="skill-item"><span>ESP32/Arduino</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
-          <div class="skill-item"><span>IoT Systems</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>PCB Design / Soldering</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>I2C / UART Comms</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
           <div class="skill-item"><span>C/C++</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+        </div>
+        <div class="subsystem-panel">
+          <div class="panel-corner top-left">⌜</div>
+          <div class="panel-corner top-right">⌝</div>
+          <div class="panel-corner bottom-left">⌞</div>
+          <div class="panel-corner bottom-right">⌟</div>
+          <div class="subsystem-header">SUBSYSTEM: TOOLS</div>
+          <hr class="scan-hr">
+          <div class="skill-item"><span>Linux / Git</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>SolidWorks</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>Flask / REST APIs</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
+          <div class="skill-item"><span>SQL</span> <span class="status-nominal">[NOMINAL ✓]</span></div>
         </div>
       </div>
     </section>

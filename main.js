@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const bootText = [
     "INITIALIZING GROUND CONTROL SYSTEM...",
     "LOADING OPERATOR PROFILE: KUSH SARAF",
-    "TELEMETRY LINK: ESTABLISHED",
+    "HCR LAB LINK: ACTIVE  |  REUDE UPLINK: ESTABLISHED",
+    "TELEMETRY LINK: NOMINAL  |  DEPLOYMENTS: 3 ACTIVE",
     "ALL SYSTEMS NOMINAL"
   ];
   
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: "mission-002", x: 65, y: 25, name: "MISSION-002", desc: "ISRO UAV Docking" },
     { id: "mission-003", x: 75, y: 65, name: "MISSION-003", desc: "Smart Child Safety" },
     { id: "mission-004", x: 30, y: 75, name: "MISSION-004", desc: "Jarvis for Windows" },
-    { id: "assignments", x: 50, y: 45, name: "FIELD ASSIGNMENTS", desc: "LTTRBX — AI DEPLOYMENT" },
+    { id: "assignments", x: 50, y: 45, name: "FIELD DEPLOYMENTS", desc: "HCR IIT-GN | REUDE | LTTRBX" },
     { id: "mission-005", x: 80, y: 40, name: "MISSION-005", desc: "Employee Monitoring" }
   ];
 
@@ -287,13 +288,42 @@ document.addEventListener("DOMContentLoaded", () => {
         
         switch(cmd) {
           case 'help':
-            printTerminal("AVAILABLE COMMANDS: whoami, skills, clear, exit");
+            printTerminal("AVAILABLE COMMANDS: whoami, deployments, vins, gait, skills, clear, exit");
             break;
           case 'whoami':
-            printTerminal("OPERATOR: KUSH SARAF | AUTONOMOUS SYSTEMS | BATCH 2028");
+            printTerminal("OPERATOR: KUSH SARAF | AUTONOMOUS SYSTEMS / GAIT ANALYSIS | BATCH 2028");
+            printTerminal("AFFIL   : KARNAVATI UNIVERSITY × IIT GANDHINAGAR — HCR LAB");
+            printTerminal("ACTIVE  : VINS UAV NAV (REUDE) | WEARABLE SENSING (HCR LAB IIT-GN)");
+            break;
+          case 'deployments':
+            printTerminal(">> ACTIVE FIELD DEPLOYMENTS");
+            printTerminal("   D-001: HCR LAB IIT-GN — RESEARCH INTERN [ACTIVE] MAY-JUL 2026");
+            printTerminal("         Wearable gait sensing | PCB design | I2C/UART | vGRF estimation");
+            printTerminal("   D-002: REUDE TECHNOLOGIES — UAV NAV & CONTROL [ACTIVE]");
+            printTerminal("         VINS integration | MAVLink offboard | ROS2 autonomy");
+            printTerminal("   D-003: LTTRBX TECHNOLABS — AI INTERN [COMPLETE] MAY-JUL 2025");
+            printTerminal("         NLP CRM engine | ML financial forecasting");
+            break;
+          case 'vins':
+            printTerminal(">> VINS — VISUAL-INERTIAL NAVIGATION SYSTEMS");
+            printTerminal("   PLATFORM : ROS2 + MAVLink offboard control");
+            printTerminal("   SENSORS  : Camera + IMU (synchronized)");
+            printTerminal("   STATUS   : ACTIVE DEV @ REUDE TECHNOLOGIES");
+            printTerminal("   GOAL     : GPS-denied UAV state estimation and trajectory control");
+            break;
+          case 'gait':
+            printTerminal(">> WEARABLE GAIT ANALYSIS — HCR LAB, IIT GANDHINAGAR");
+            printTerminal("   SENSORS : Pneumatic insoles + IMUs");
+            printTerminal("   TARGET  : Vertical Ground Reaction Force (vGRF) estimation");
+            printTerminal("   HW      : Custom PCBs | I2C/UART | Sensor integration");
+            printTerminal("   ML      : Pressure + inertial data pipeline for gait characterization");
             break;
           case 'skills':
-            printTerminal("LOADING SUBSYSTEMS... [████████░░] 80% NOMINAL");
+            printTerminal(">> ONBOARD SYSTEMS DIAGNOSTIC");
+            printTerminal("   [NOMINAL] Python/C++ | ROS2/MAVLink | PyTorch/OpenCV");
+            printTerminal("   [NOMINAL] PCB Design | I2C/UART | SolidWorks | Flask");
+            printTerminal("   [NOMINAL] YOLOv8 | DeepSORT | SLAM | Gazebo SITL");
+            printTerminal("   SYSTEMS OPERATIONAL: 15 / 15  ██████████ 100%");
             break;
           case 'clear':
             terminalOutput.innerHTML = '';
