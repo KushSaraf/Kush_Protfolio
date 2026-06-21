@@ -662,6 +662,9 @@ section.visible {
   justify-content: space-between;
   margin-bottom: 8px;
 }
+.skill-item span:last-child {
+  white-space: nowrap;
+}
 
 /* Research Section */
 .intel-reports {
