@@ -169,18 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Tab Title Flicker ---
-  const titles = [
-    "KS-CONTROL | OPERATOR: KUSH SARAF",
-    "KS-CONTROL | ALL SYSTEMS NOMINAL",
-    "KS-CONTROL | UPLINK ACTIVE ●"
-  ];
-  let titleIndex = 0;
-  setInterval(() => {
-    titleIndex = (titleIndex + 1) % titles.length;
-    document.title = titles[titleIndex];
-  }, 3000);
-
   // --- Drone Cursor ---
   const cursor = document.getElementById('drone-cursor');
   if(cursor) {
