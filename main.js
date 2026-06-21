@@ -72,12 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const readoutDesc = document.getElementById('readout-desc');
 
   const targets = [
+    { id: "mission-aerosense", x: 40, y: 20, name: "MISSION-006", desc: "AeroSense Simulation" },
     { id: "mission-001", x: 25, y: 35, name: "MISSION-001", desc: "Multi-UAV Swarm" },
     { id: "mission-002", x: 65, y: 25, name: "MISSION-002", desc: "ISRO UAV Docking" },
     { id: "mission-003", x: 75, y: 65, name: "MISSION-003", desc: "Smart Child Safety" },
     { id: "mission-004", x: 30, y: 75, name: "MISSION-004", desc: "Jarvis for Windows" },
+    { id: "mission-005", x: 80, y: 40, name: "MISSION-005", desc: "Employee Monitoring" },
     { id: "assignments", x: 50, y: 45, name: "FIELD DEPLOYMENTS", desc: "HCR IIT-GN | REUDE | LTTRBX" },
-    { id: "mission-005", x: 80, y: 40, name: "MISSION-005", desc: "Employee Monitoring" }
+    { id: "achievements", x: 85, y: 80, name: "COMMENDATIONS", desc: "Grants & Victories" },
+    { id: "research", x: 15, y: 55, name: "RESEARCH OPS", desc: "IEEE Publications" }
   ];
 
   targets.forEach(t => {
